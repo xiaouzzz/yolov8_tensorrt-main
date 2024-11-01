@@ -1,35 +1,26 @@
+#### 1.新建文件夹，打开cmd
 
-# YOLOv8
-The Pytorch implementation is [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
-
-# Reference 
-Reference wang-xinyu [tensorrtx](https://github.com/wang-xinyu/tensorrtx)
-
-# Requirements
-TensorRT 8.2\
-OpenCV 4.6.0
-
-# Config
-Choose the model n/s/m/l/x from command line arguments.\
-Check more configs in include/config.h
-
-# How to Run, yolov8s as example
-1. generate .wts from pytorch with .pt
+```bash
+git clone git@github.com:xiaouzzz/yolov8_tensorrt-main.git
 ```
-// download https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8s.pt
-cd yolov8
-python gen_wts.py
-// a file 'yolov8s.wts' will be generated.
+
+### 2.先安装vs2022，再安装cuda11.8（顺序不能反）
+
+### 3.下载tensorrt8.6版本
+
+#### 4.修改cmakelists.txt
+
+把opencv，tensorrt的位置改成自己的
+
+#### 5.使用cmake编译
+
+#### 6.打开编译好的sln文件
+
+#### 7.右键解决方案的yolov8设为启动项
+
+#### 8.先注释main里面这行，运行，再取消注释运行
+
+```c++
+   //wts_name = "";
 ```
-2. Run CMakeLists.txt with Cmake
 
-3. Open project and run it
-
-# INT8 Quantization
-1. set the macro USE_INT8 in config.h and make
-
-2. serialize the model and test
-
-![bus](https://github.com/tianqiang1223/yolov8_tensorrt/blob/main/images/bus.jpg)
-
-# 转载请注明出处
